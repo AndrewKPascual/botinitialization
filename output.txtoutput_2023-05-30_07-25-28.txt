@@ -1,0 +1,180 @@
+Open main menu
+
+Stack AI![Stack AI](/_next/image?url=%2Fstack-2.png&w=384&q=75)
+
+[![Discord](/_next/image?url=%2Fdiscord.png&w=64&q=75)](https://discord.gg/sSbwawtNsV)
+
+Join Discord
+
+
+
+[![Zoom](/_next/image?url=%2Fzoom_black.png&w=64&q=75)](https://calendly.com/arosinol/meeting)
+
+Talk to us
+
+
+
+[](https://docs.stack-ai.com/stack-ai/)
+
+Docs
+
+
+
+Sign up
+
+Open user menu
+
+Profile
+
+
+
+# Build and Deploy  AI Applications in minutes
+
+Bring custom Large Language Models (LLMs) like ChatGPT to your product
+effortlessly, without writing a single line of code.
+
+Get started
+
+[Talk to us](https://calendly.com/arosinol/meeting)
+
+Trusted by the Best
+
+![hatch](/_next/image?url=%2Fhatch.webp&w=384&q=75)![varos](/varos.svg)![JustPaid](/justpaid.svg)![Winit](/winit.svg)![yummy](/_next/image?url=%2Fyummy.png&w=384&q=75)![Truewind](/_next/image?url=%2Ftruewind.png&w=384&q=75)![zepp](/zepp.svg)![BWH](/bwh2.svg)![mit
+medical](/_next/image?url=%2Fmit_medical.png&w=256&q=75)![actuate](/_next/image?url=%2Factuate.png&w=640&q=75)![zumma](/_next/image?url=%2Fzumma.webp&w=384&q=75)![paperplane](/paperplane.svg)![hatch](/_next/image?url=%2Fhatch.webp&w=384&q=75)![varos](/varos.svg)![JustPaid](/justpaid.svg)![Winit](/winit.svg)![yummy](/_next/image?url=%2Fyummy.png&w=384&q=75)![Truewind](/_next/image?url=%2Ftruewind.png&w=384&q=75)![zepp](/zepp.svg)![BWH](/bwh2.svg)![mit
+medical](/_next/image?url=%2Fmit_medical.png&w=256&q=75)![actuate](/_next/image?url=%2Factuate.png&w=640&q=75)![zumma](/_next/image?url=%2Fzumma.webp&w=384&q=75)![paperplane](/paperplane.svg)![hatch](/_next/image?url=%2Fhatch.webp&w=384&q=75)![varos](/varos.svg)![JustPaid](/justpaid.svg)![Winit](/winit.svg)![yummy](/_next/image?url=%2Fyummy.png&w=384&q=75)![Truewind](/_next/image?url=%2Ftruewind.png&w=384&q=75)![zepp](/zepp.svg)![BWH](/bwh2.svg)![mit
+medical](/_next/image?url=%2Fmit_medical.png&w=256&q=75)![actuate](/_next/image?url=%2Factuate.png&w=640&q=75)![zumma](/_next/image?url=%2Fzumma.webp&w=384&q=75)![paperplane](/paperplane.svg)
+
+Backed by Visionaries
+
+![Soma Capital](/_next/image?url=%2Fsoma_inline.png&w=384&q=75)
+
+![Y Combinator](/_next/image?url=%2Fyc_transparent_2.png&w=384&q=75)
+
+![Epakon Capital](/_next/image?url=%2Fepakon_capital_black.png&w=384&q=75)
+
+Trusted by the Best
+
+![zepp](/zepp.svg)
+
+![hatch](/_next/image?url=%2Fhatch.webp&w=384&q=75)
+
+![Winit](/winit.svg)
+
+![JustPaid](/justpaid.svg)
+
+![varos](/varos.svg)
+
+![Truewind](/_next/image?url=%2Ftruewind.png&w=384&q=75)
+
+![yummy](/_next/image?url=%2Fyummy.png&w=384&q=75)
+
+![mit medical](/_next/image?url=%2Fmit_medical.png&w=256&q=75)
+
+![zumma](/_next/image?url=%2Fzumma.webp&w=384&q=75)
+
+![actuate](/_next/image?url=%2Factuate.png&w=640&q=75)
+
+![paperplane](/paperplane.svg)
+
+![BWH](/bwh2.svg)
+
+Backed by Visionaries
+
+![Soma Capital](/_next/image?url=%2Fsoma_inline.png&w=384&q=75)
+
+![Y Combinator](/_next/image?url=%2Fyc_transparent_2.png&w=384&q=75)
+
+![Epakon Capital](/_next/image?url=%2Fepakon_capital_black.png&w=384&q=75)
+
+## No-Code Tools for Large Language Models (LLMs)
+
+AI for any use-case
+
+Harness the power of AI for any use case with Stack AI, a no-code tool that
+allows you to design, test, and deploy AI workflows using models such as
+ChatGPT. Our platform enables teams to create various applications, including:
+
+Chatbots and Assistants.
+
+    Interact with users, answer questions, and complete tasks using your internal data and APIs.
+
+Document Processing.
+
+    Extract insights, provide summaries, and answer questions from any document, regardless of its length.
+
+Answer Questions on Databases.
+
+    Connect models like ChatGPT to databases like Notion, Airtable, or Postgres to gain valuable insights about your organization.
+
+Content Creation.
+
+    Generate tags, summaries, and seamlessly transfer styles or formats between documents and data sources.
+
+## Build an AI for Your Product in Minutes
+
+Graphically connect LLMs, Vector Databases, Tools, and Data loaders.
+
+Easily connect Large Language Models (LLMs), Vector Databases, Tools, and Data
+loaders using our intuitive graphical interface. Developer teams rely on Stack
+AI to automate customer support, process documents, qualify sales leads, and
+search through extensive data libraries.
+
+It's like working with Legos for AI!
+
+![App screenshot](/tool_ss.png)
+
+Connect Data from Any Source
+
+    Effortlessly load data from files, websites, or any database, such as Notion, Airtable, or Postgres, into your LLM-powered application.
+
+Tools for Your LLM
+
+    Empower your LLM to interact with the world by seamlessly integrating with any API, including Google Search and WolframAlpha.
+
+Templates for Any Workflow
+
+    Jumpstart your project with a diverse library of templates for common workflows, such as chatbots and document question answering.
+
+Experiment in Minutes
+
+    Quickly try out multiple prompts and LLM architectures with the click of a button, allowing for rapid experimentation.
+
+Fine-tune to Your Use Case
+
+    Collect data and run fine-tuning jobs to create the optimal LLM that aligns with your specific product needs.
+
+Deliver to Users in Seconds
+
+    We host all your workflows as APIs, ensuring your users can access AI instantly, with minimal latency.
+
+## Production-Ready AI
+
+Compose Applications
+
+Fine Tune
+
+Label Data
+
+Deploy
+
+    Build applications by dragging, dropping, and connecting components from a list of LLMs, vector databases, tools, and data sources..
+![](/new_screens/flow.png)
+
+## Frequently asked questions
+
+What Large Language Models are available in Stack AI?
+
+Is there a limit to the size or complexity of documents that Stack AI can
+process?
+
+How secure is the data processed and stored by Stack AI?
+
+What pricing options are available for Stack AI and are there any usage
+limitations?
+
+Can I use my own API Keys?
+
+© 2023 [ Stack AI™ (Eigen Inc.) ](https://stack-ai.com/). All Rights Reserved.
+
+Made with ❤ by![MIT](/_next/image?url=%2Fmit.png&w=64&q=75)PhDs
+

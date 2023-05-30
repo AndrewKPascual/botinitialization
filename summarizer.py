@@ -58,7 +58,7 @@ def summarize_text(file_path):
     # Save the summary to a new text file
     with open('summary.txt', 'w', encoding='utf-8') as file:
         file.write(summary)
-    
+    process_documents('summary.txt')
 
 def split_text(text, max_tokens):
     tokens = text.split()
@@ -74,7 +74,6 @@ def split_text(text, max_tokens):
 
     # Append the last chunk
     chunks.append(current_chunk.strip())
-    process_documents('summary.txt')
     return chunks
 
 # Example usage
