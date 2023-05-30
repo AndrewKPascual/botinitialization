@@ -10,7 +10,7 @@ from langchain.document_loaders import DirectoryLoader
 
 load_dotenv()
 
-persist_directory = 'dbs'
+persist_directory = 'db'
 embedding = OpenAIEmbeddings()
 # Now we can load the persisted database from disk, and use it as normal. 
 vectordb = Chroma(persist_directory=persist_directory, 
@@ -18,7 +18,7 @@ vectordb = Chroma(persist_directory=persist_directory,
 
 retriever = vectordb.as_retriever()
 
-docs = retriever.get_relevant_documents("output.txtoutput_2023-05-28_14-31-41.txt")
+docs = retriever.get_relevant_documents("1")
 len(docs)
 retriever = vectordb.as_retriever(search_kwargs={"k": 2})
 retriever.search_type

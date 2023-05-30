@@ -27,7 +27,8 @@ def process_documents(filepath):
 
 
     # Create document objects
-    document1 = MyDocument(page_content=file_contents1, metadata={'id': 1})
+    # I am unsure if the meta data will affect anything however, I believe if they all have the same id they will be called upon when you look for similar docs.
+    document1 = MyDocument(page_content=file_contents1, metadata={'id': 1}) 
 
     # Create the Chroma vector store from the document objects
     vectordb = Chroma.from_documents(documents=[document1],

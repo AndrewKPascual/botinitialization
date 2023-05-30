@@ -2,7 +2,8 @@ import openai
 import time
 import os
 from dotenv import load_dotenv
-from langchaindb import process_documents
+import tempfile
+
 load_dotenv()
 
 def summarize_text(file_path):
@@ -54,11 +55,14 @@ def summarize_text(file_path):
 
     # Extract the last summary from the conversation memory
     summary = conversation_memory[-1]['content']
+    print(summary)
+    # Create a temporary file
+    with tempfile.NamedTemporaryFile(mode='w', delete=False, suffix='.txt') as temp_file:
+        temp_file.write(summary)
+        temp_file_path = temp_file.name
 
-    # Save the summary to a new text file
-    with open('summary.txt', 'w', encoding='utf-8') as file:
-        file.write(summary)
-    process_documents('summary.txt')
+    # Return the path to the temporary file
+    return temp_file_path
 
 def split_text(text, max_tokens):
     tokens = text.split()

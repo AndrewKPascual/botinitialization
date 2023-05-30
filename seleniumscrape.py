@@ -2,14 +2,17 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 import time
-from markdowns import convert_html_to_text
+import chromedriver_autoinstaller
+import tempfile
+
+chromedriver_autoinstaller.install()
 
 def scrape_website(url):
     # Set up the Selenium Chrome driver
-    service = Service(r'C:\Users\andre\Desktop\chromedriver\chromedriver.exe')  # Replace with the path to your chromedriver executable
+     
     options = Options()
     options.add_argument('--headless')  # Run Chrome in headless mode, no GUI
-    driver = webdriver.Chrome(service=service, options=options)
+    driver = webdriver.Chrome(options=options)
 
     # Load the website
     driver.get(url)  # Replace with the URL of the website you want to scrape
@@ -20,12 +23,11 @@ def scrape_website(url):
     # Get the page source (HTML code) after the dynamic content has loaded
     page_source = driver.page_source
 
-    # Write the page source to a file
-    with open('page_source.html', 'w', encoding='utf-8') as file:
-        file.write(page_source)
-
+    # Create a temporary file with UTF-8 encoding
+    with tempfile.NamedTemporaryFile(mode='w', delete=False, encoding='utf-8') as temp_file:
+        temp_file.write(page_source)
+        temp_file_path = temp_file.name
+    
     # Close the driver
     driver.quit()
-
-    # converts the output into a txt file
-    convert_html_to_text('page_source.html', 'output.txt')
+    return temp_file_path
