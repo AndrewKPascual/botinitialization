@@ -8,7 +8,7 @@ def summarize_text(file_path):
     # Initialize OpenAI API client
     openai.api_key = os.getenv('OPENAI_API_KEY')
 
-    # Define the desired summary length
+    # Define the desired summary length defunct/unused
     summary_length = 300
 
     # Read the input text from the file
@@ -25,7 +25,7 @@ def summarize_text(file_path):
     for i, chunk in enumerate(chunked_text):
         # Create a new conversation or extend an existing one
         if i == len(chunked_text) - 1:
-            system_message = 'This is the last chunk. Generating the summary now.'
+            system_message = 'This is the last chunk. Generating a long summary now.'
         else:
             system_message = 'There are more chunks. Please wait for the next response.'
 

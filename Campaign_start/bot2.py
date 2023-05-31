@@ -4,7 +4,7 @@ from questioner import run_question_answering
 from flask_ngrok import run_with_ngrok
 from pyngrok import ngrok
 
-API_URL = "https://flowise.andrewpascual.repl.co/api/v1/prediction/298efec4-ba22-4ec2-b2a5-c4729c619af9"
+API_URL = "https://flowise.andrewpascual.repl.co/api/v1/prediction/1557b335-1881-407e-a486-879806f50e89"
 
 app = Flask(__name__)
 run_with_ngrok(app)  # Integrate ngrok with Flask app
@@ -30,12 +30,13 @@ def process_message():
 
 def query(payload):
     response = requests.post(API_URL, json=payload)
-    return response.json()
+    return {"message": response.text}  # Wrap the response string in a dictionary
 
 if __name__ == '__main__':
     conversation_memory = []
-    app.run()
 
     # Start ngrok tunnel
     ngrok_url = ngrok.connect(5000).public_url
     print('Ngrok URL:', ngrok_url)
+
+    app.run()
