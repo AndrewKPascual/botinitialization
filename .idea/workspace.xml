@@ -5,17 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5a9a8cdc-8c7e-46ca-b5ff-dba97039c9b2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/db/chroma-collections.parquet" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/chroma-embeddings.parquet" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/index/id_to_uuid_ac9442cb-0339-451f-9221-0d488967c599.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/index/index_ac9442cb-0339-451f-9221-0d488967c599.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/index/index_metadata_ac9442cb-0339-451f-9221-0d488967c599.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/index/uuid_to_id_ac9442cb-0339-451f-9221-0d488967c599.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/langchaindb.py" beforeDir="false" afterPath="$PROJECT_DIR$/langchaindb.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/questioner.py" beforeDir="false" afterPath="$PROJECT_DIR$/questioner.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seleniumscrape.py" beforeDir="false" afterPath="$PROJECT_DIR$/seleniumscrape.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/summarizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/summarizer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,12 +21,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="botinitialization" />

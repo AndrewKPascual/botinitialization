@@ -7,7 +7,7 @@ import os
 import shutil
 
 # Prompt the user to enter the URL
-url = 'https://tryhungry.com/'
+url = 'https://google.com/'
 
 # This will name the chroma database
 db_name = remove_www_and_tld(url)
@@ -20,7 +20,7 @@ temp_file2 = convert_html_to_text(temp_file1)
 
 # This creates a summary of the markdown text that will create a summary from OpenAI
 # NEED to add a section to create a new summary based on the user input I.E. is this summary long enough, good enough or has all the details.
-temp_file3 = summarize_text(temp_file2, db_name)
+temp_file3 = summarize_text(temp_file2)
 
 # This will add the document to the Database in Chroma
 process_documents(temp_file3, db_name)
