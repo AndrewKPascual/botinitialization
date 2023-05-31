@@ -10,7 +10,7 @@ from langchain.document_loaders import DirectoryLoader
 import chromadb
 load_dotenv()
 
-def run_question_answering():
+def run_question_answering(query):
     persist_directory = 'tryhungry'
     embedding = OpenAIEmbeddings()
     # Now we can load the persisted database from disk and use it as normal.
@@ -26,14 +26,9 @@ def run_question_answering():
     # Create the chain to answer questions
     qa_chain = RetrievalQA.from_chain_type(llm=OpenAI(), chain_type="stuff", retriever=retriever, return_source_documents=True)
 
-    ## Cite sources
-    def process_llm_response(llm_response):
-        print(llm_response['result'])
-
     # Full example
-    query = "What is tryhungry give a long summary?"
     llm_response = qa_chain(query)
-    process_llm_response(llm_response)
+    return (llm_response['result'])
 
 # Call the function to run the question answering
-run_question_answering()
+

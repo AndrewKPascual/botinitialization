@@ -3,6 +3,7 @@ import openai
 import os
 from dotenv import load_dotenv
 from pyngrok import ngrok
+from questioner import run_question_answering
 import sqlite3
 
 load_dotenv()
@@ -26,9 +27,6 @@ with sqlite3.connect(DB_FILE) as conn:
         )
     """)
 
-# Define the conversation memory variable
-conversation_memory = []
-
 @app.route('/')
 def home():
     return render_template('index.html')
@@ -36,8 +34,6 @@ def home():
 
 @app.route('/chat', methods=['GET'])
 def chat():
-    global conversation_memory
-
     # Get the current conversation memory from the request
     conversation_memory_str = request.args.get('messages')
     conversation_memory = conversation_memory_str.split(',') if conversation_memory_str else []
@@ -105,12 +101,6 @@ def save_conversation_memory(conversation_memory):
         for message in conversation_memory:
             c.execute("INSERT INTO conversation_history (role, content) VALUES (?, ?)",
                       (message['role'], message['content']))
-
-
-def run_question_answering(company_summary):
-    # Implement your question answering logic here
-    # This is just a placeholder function
-    return company_summary
 
 
 if __name__ == '__main__':

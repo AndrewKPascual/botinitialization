@@ -4,12 +4,12 @@ from dotenv import load_dotenv
 from langchain.vectorstores import Chroma
 from langchain.embeddings import OpenAIEmbeddings
 
-def process_documents(filepath):
+def process_documents(filepath, db_name):
     load_dotenv()
 
     # Embed and store the texts
     # Supplying a persist_directory will store the embeddings on disk
-    persist_directory = 'db'
+    persist_directory = db_name
 
     ## here we are using OpenAI embeddings but in the future, we will swap out to local embeddings
     embedding = OpenAIEmbeddings()
