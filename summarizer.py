@@ -4,11 +4,11 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 
-def summarize_text(file_path):
+def summarize_text(file_path, user_feedback=None):
     # Initialize OpenAI API client
     openai.api_key = os.getenv('OPENAI_API_KEY')
 
-    # Define the desired summary length defunct/unused
+    # Define the desired summary length (defunct/unused)
     summary_length = 300
 
     # Read the input text from the file
@@ -36,6 +36,11 @@ def summarize_text(file_path):
         while len(conversation_memory) > 4 and len(' '.join(msg['content'] for msg in conversation_memory)) > 4096:
             conversation_memory.pop(1)
 
+        # Check if user feedback is provided and modify the conversation memory or summary generation process accordingly
+        if user_feedback:
+            conversation_memory.append({'role': 'user', 'content': user_feedback})
+            conversation_memory.append({'role': 'system', 'content': 'User provided feedback.'})
+
         # Create or continue the conversation using the chat completion
         response = openai.ChatCompletion.create(
             model='gpt-3.5-turbo',
@@ -57,7 +62,9 @@ def summarize_text(file_path):
     # Save the summary to a new text file
     with open('summary.txt', 'w', encoding='utf-8') as file:
         file.write(summary)
+
     return 'summary.txt'
+
 def split_text(text, max_tokens):
     tokens = text.split()
     chunks = []
@@ -74,5 +81,3 @@ def split_text(text, max_tokens):
     chunks.append(current_chunk.strip())
 
     return chunks
-
-# Example usage
