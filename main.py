@@ -23,7 +23,7 @@ def process_url():
     file2 = convert_html_to_text(file1,db_name)
 
     # This creates a summary of the markdown text that will create a summary from OpenAI
-    file3 = summarize_text(file2, db_name)
+    file3 = summarize_text(file2)
 
     # Return the summary and path
     with open(file3, 'r') as f:
