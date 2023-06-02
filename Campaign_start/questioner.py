@@ -11,7 +11,7 @@ import chromadb
 load_dotenv()
 
 def run_question_answering(query):
-    persist_directory = 'tryhungry'
+    persist_directory = 'stack-ai'
     embedding = OpenAIEmbeddings()
     # Now we can load the persisted database from disk and use it as normal.
     vectordb = Chroma(persist_directory=persist_directory, embedding_function=embedding)

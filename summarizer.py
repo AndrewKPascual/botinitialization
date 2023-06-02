@@ -4,16 +4,9 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 
-def summarize_text(file_path, user_feedback=None):
+def summarize_text(input_text, db_name, user_feedback=None, file_path=None):
     # Initialize OpenAI API client
     openai.api_key = os.getenv('OPENAI_API_KEY')
-
-    # Define the desired summary length (defunct/unused)
-    summary_length = 300
-
-    # Read the input text from the file
-    with open(file_path, 'r', encoding='utf-8') as file:
-        input_text = file.read()
 
     # Split the text into smaller chunks
     chunked_text = split_text(input_text, max_tokens=2000)
@@ -25,21 +18,19 @@ def summarize_text(file_path, user_feedback=None):
     for i, chunk in enumerate(chunked_text):
         # Create a new conversation or extend an existing one
         if i == len(chunked_text) - 1:
+            if user_feedback:
+                conversation_memory.append({'role': 'system', 'content': 'User provided feedback: ' + user_feedback})
             system_message = 'This is the last chunk. Generating a long summary now.'
         else:
+            conversation_memory.append({'role': 'user', 'content': chunk})
             system_message = 'There are more chunks. Please wait for the next response.'
-
-        conversation_memory.append({'role': 'user', 'content': chunk})
-        conversation_memory.append({'role': 'system', 'content': system_message})
+            if user_feedback:
+                conversation_memory.append({'role': 'system', 'content': 'User provided feedback: ' + user_feedback})
+            conversation_memory.append({'role': 'system', 'content': system_message})
 
         # Truncate or reduce the message lengths to fit within the model's maximum context length
         while len(conversation_memory) > 4 and len(' '.join(msg['content'] for msg in conversation_memory)) > 4096:
             conversation_memory.pop(1)
-
-        # Check if user feedback is provided and modify the conversation memory or summary generation process accordingly
-        if user_feedback:
-            conversation_memory.append({'role': 'user', 'content': user_feedback})
-            conversation_memory.append({'role': 'system', 'content': 'User provided feedback.'})
 
         # Create or continue the conversation using the chat completion
         response = openai.ChatCompletion.create(
@@ -58,12 +49,14 @@ def summarize_text(file_path, user_feedback=None):
 
     # Extract the last summary from the conversation memory
     summary = conversation_memory[-1]['content']
+    db_name_txt = db_name + '.txt'
+    # Save the summary to a txt file in the specified file path if provided
+    if file_path:
+        with open(os.path.join(file_path, db_name_txt), 'w', encoding='utf-8') as file:
+            file.write(summary)
 
-    # Save the summary to a new text file
-    with open('summary.txt', 'w', encoding='utf-8') as file:
-        file.write(summary)
+    return os.path.join(file_path, db_name_txt) if file_path else db_name_txt
 
-    return 'summary.txt'
 
 def split_text(text, max_tokens):
     tokens = text.split()

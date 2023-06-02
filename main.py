@@ -4,54 +4,53 @@ from webmapscrapper import remove_www_and_tld
 from markdowns import convert_html_to_text
 from summarizer import summarize_text
 from langchaindb import process_documents
-import os
-import shutil
+from pyngrok import ngrok
 
 app = Flask(__name__)
 
-# Declare temp_file2 and summary as global variables
-temp_file2 = None
-summary = None
-
 @app.route('/', methods=['POST'])
 def process_url():
-    global temp_file2, summary  # declare that we're using the global temp_file2 and summary variables
-
     # Get the URL from the POST request
-    url = request.form['url']
-
+    url = request.args.get('url')
+    summary = request.args.get('summary', '')  # Get the summary if provided, otherwise use an empty string
     # This will name the chroma database
     db_name = remove_www_and_tld(url)
 
     # Scrape the website using the entered URL
-    temp_file1 = scrape_website(url)
+    file1 = scrape_website(url,db_name)
 
     # This will convert the HTML scraped into a markdown written in a txt file and return the file path.
-    temp_file2 = convert_html_to_text(temp_file1)
+    file2 = convert_html_to_text(file1,db_name)
 
     # This creates a summary of the markdown text that will create a summary from OpenAI
-    temp_file3 = summarize_text(temp_file2)
+    file3 = summarize_text(file2, db_name)
 
     # Return the summary and path
-    with open(temp_file3, 'r') as f:
+    with open(file3, 'r') as f:
         summary = f.read()
 
     # Change this into a webhook post once we get it
     return jsonify({"message": "URL processed and summary generated successfully!", "summary": summary})
 
+
 @app.route('/change_summary', methods=['POST'])
 def change_summary():
-    global temp_file2, summary  # declare that we're using the global temp_file2 and summary variables
+    # Get the URL from the POST request they gotta resend this data so I don't have to add global variables
+    url = request.form['url']
 
     # Get the feedback from the POST request
     feedback = request.form['feedback']
 
+    # This will name summary
+    db_name = remove_www_and_tld(url)
+
     # Use the feedback to generate a new summary
-    temp_file3 = summarize_text(temp_file2, user_feedback=feedback)
+    file_path = db_name + '.txt'
+    summarize_text(user_feedback=feedback, file_path=file_path)
 
     # Return the new summary
-    with open(temp_file3, 'r') as f:
-        summary = f.read()
+    with open(file_path, 'r') as file:
+        summary = file.read()
 
     # Change this into a webhook post once we get it
     return jsonify({"message": "Summary changed successfully!", "summary": summary})
@@ -63,14 +62,10 @@ def move_to_campaign_start():
 
     # Move the newly created folder to "Campaign_start"
     new_folder_path = db_name
-    destination_path = os.path.join("Campaign_start", db_name)
-
-    # Check if the folder exists before moving it
-    if os.path.exists(new_folder_path):
-        shutil.move(new_folder_path, destination_path)
-        return "Folder moved successfully!"
-    else:
-        return "Folder does not exist!", 400
+    process_documents("Campaign_start", db_name)
 
 if __name__ == '__main__':
+    # Start ngrok tunnel
+    ngrok_url = ngrok.connect(5000).public_url
+    print('Ngrok URL:', ngrok_url)
     app.run()

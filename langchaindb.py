@@ -16,7 +16,7 @@ def process_documents(filepath, db_name):
 
     # Define a custom Document class
     class MyDocument:
-        def __init__(self, page_content, metadata):
+        def __init__(self, page_content, metadata): 
             self.page_content = page_content
             self.metadata = metadata
 

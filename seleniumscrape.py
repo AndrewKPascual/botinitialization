@@ -1,8 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
-import tempfile
 
-def scrape_website(url):
+def scrape_website(url, file_path):
     # Make a request to the website
     r = requests.get(url)
 
@@ -12,9 +11,8 @@ def scrape_website(url):
     # Get the page source (HTML code)
     page_source = str(soup.prettify())
 
-    # Create a temporary file with UTF-8 encoding
-    with tempfile.NamedTemporaryFile(mode='w', delete=False, encoding='utf-8') as temp_file:
-        temp_file.write(page_source)
-        temp_file_path = temp_file.name
+    # Save the page source to the specified file path
+    with open(file_path, 'w', encoding='utf-8') as file:
+        file.write(page_source)
 
-    return temp_file_path
+    return page_source
